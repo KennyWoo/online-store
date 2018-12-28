@@ -17,6 +17,10 @@ import org.springframework.core.env.Environment;
 
 import javax.annotation.PreDestroy;
 
+/**
+ * Hibernate 二级缓存设置
+ * Hazelcast 缓存设置
+ */
 @Configuration
 @EnableCaching
 public class CacheConfiguration {

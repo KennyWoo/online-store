@@ -16,6 +16,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.sql.SQLException;
 import java.lang.NumberFormatException;
 
+/**
+ * 数据库设置、事务管理
+ * JPA 设置
+ * Liquibase 设置
+ */
 @Configuration
 @EnableJpaRepositories("com.mycompany.store.repository")
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
@@ -43,7 +48,7 @@ public class DatabaseConfiguration {
         log.debug("H2 database is available on port {}", port);
         return H2ConfigurationHelper.createServer(port);
     }
-	
+
     private String getValidPortForH2() throws NumberFormatException {
         int port = Integer.parseInt(env.getProperty("server.port"));
         if (port < 10000) {
